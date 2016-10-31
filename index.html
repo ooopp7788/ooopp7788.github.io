@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,8 +99,8 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -137,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container one-collumn sidebar-position-right 
    page-home 
  ">
     <div class="headband"></div>
@@ -175,6 +175,14 @@
           <a href="/" rel="section">
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
           </a>
         </li>
       
@@ -344,7 +352,7 @@
               
                 
                 <a class="post-title-link" href="/2016/10/31/hello-HEXO/" itemprop="url">
-                  hello HEXO
+                  hello HEXO!
                 </a>
               
             
@@ -406,7 +414,21 @@
       
         
           
-            
+            <p>刚在githuub上建立了我的<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> ，把<a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO说明文档</a>也留在这。下面是我的搭建流程。</p>
+<h2 id="一、hexo使用（首先要在node，git环境下）"><a href="#一、hexo使用（首先要在node，git环境下）" class="headerlink" title="一、hexo使用（首先要在node，git环境下）"></a>一、hexo使用（首先要在node，git环境下）</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i -g hexo</div></pre></td></tr></table></figure>
+<p>可以输入 hexo 命令验证是否安装成功</p>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><h4 id="hexo-init"><a href="#hexo-init" class="headerlink" title="hexo init"></a>hexo init</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init MyHexo</div></pre></td></tr></table></figure>
+<p>初始化你的hexo文件目录结构，生成的MyHexo文件夹下有我们所需的所有文件和目录，其中public为发布目录，themes为主题目录，source\/_post 为发布文章的目录，可以发现里面有一个HelloWorld.md的文件。</p>
+<h4 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+<p>生成静态文件到public目录下</p>
+<h4 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>本地发布hexo，输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可直接本地看hexo的效果</p>
+<h3 id="github上建立new-repository"><a href="#github上建立new-repository" class="headerlink" title="github上建立new repository"></a>github上建立new repository</h3><p>命名为你的 github主页名字 + github.io，如我的：ooopp7788.github.io<br>因为只有这个命名下的repository，github会默认发布为你的主页，可以通过 你的github主页名字 + github.io直接访问</p>
+<h3 id="将pubilc文件夹remote到new-repository"><a href="#将pubilc文件夹remote到new-repository" class="headerlink" title="将pubilc文件夹remote到new repository"></a>将pubilc文件夹remote到new repository</h3><p>进入MyHexo/public文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> MyHexo/public</div></pre></td></tr></table></figure></p>
+<p>初始化git本地仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
+<p>git remote add origin + 刚才建立的new repository地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:ooopp7788/ooopp7788.github.io.git</div></pre></td></tr></table></figure></p>
+<p>然后就ok啦</p>
+
           
         
       
@@ -482,10 +504,10 @@
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -543,7 +565,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -608,13 +630,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
-
-
 
   
 
