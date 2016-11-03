@@ -1,0 +1,589 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="不会nodejs的前端不是好前端，最近在github上看到talkos的源码，决定在ubuntu上搭建一个mongodb+redis的环境。
+一、mongodb安装mongodb1$ sudo apt-get install mongodb
+修改配置文件和数据存放位置（改到/www/mongodb/目录下）1$ sudo vi /etc/mongodb.conf
+vi打开mongodb.conf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubuntu中安装mongodb和redis">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/在Ubuntu中安装mongodb和redis/index.html">
+<meta property="og:site_name" content="mj's Hexo!">
+<meta property="og:description" content="不会nodejs的前端不是好前端，最近在github上看到talkos的源码，决定在ubuntu上搭建一个mongodb+redis的环境。
+一、mongodb安装mongodb1$ sudo apt-get install mongodb
+修改配置文件和数据存放位置（改到/www/mongodb/目录下）1$ sudo vi /etc/mongodb.conf
+vi打开mongodb.conf">
+<meta property="og:updated_time" content="2016-11-03T13:05:47.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Ubuntu中安装mongodb和redis">
+<meta name="twitter:description" content="不会nodejs的前端不是好前端，最近在github上看到talkos的源码，决定在ubuntu上搭建一个mongodb+redis的环境。
+一、mongodb安装mongodb1$ sudo apt-get install mongodb
+修改配置文件和数据存放位置（改到/www/mongodb/目录下）1$ sudo vi /etc/mongodb.conf
+vi打开mongodb.conf">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/03/在Ubuntu中安装mongodb和redis/"/>
+
+
+  <title> 在Ubuntu中安装mongodb和redis | mj's Hexo! </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">mj's Hexo!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在Ubuntu中安装mongodb和redis
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-03T20:38:41+08:00" content="2016-11-03">
+              2016-11-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>不会nodejs的前端不是好前端，最近在github上看到talkos的源码，决定在ubuntu上搭建一个mongodb+redis的环境。</p>
+<h2 id="一、mongodb"><a href="#一、mongodb" class="headerlink" title="一、mongodb"></a>一、mongodb</h2><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install mongodb</div></pre></td></tr></table></figure>
+<h3 id="修改配置文件和数据存放位置（改到-www-mongodb-目录下）"><a href="#修改配置文件和数据存放位置（改到-www-mongodb-目录下）" class="headerlink" title="修改配置文件和数据存放位置（改到/www/mongodb/目录下）"></a>修改配置文件和数据存放位置（改到/www/mongodb/目录下）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/mongodb.conf</div></pre></td></tr></table></figure>
+<p>vi打开mongodb.conf，找到dbpath修改为dbpath=/www/mongodb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/init.d/mongodb</div></pre></td></tr></table></figure>
+<p>vi打开mongodb.conf，找到dbpath修改为dbpath=/www/mongodb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install mongodb</div></pre></td></tr></table></figure>
+<p>vi打开mongodb.conf，修改为DATA=/www/mongodb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mkdir /www/mongodb/</div></pre></td></tr></table></figure>
+<p>创建/www/mongodb文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chown -R mongodb:nogroup /www/mongodb/</div></pre></td></tr></table></figure>
+<h3 id="mongodb自启动"><a href="#mongodb自启动" class="headerlink" title="mongodb自启动"></a>mongodb自启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/bin</div></pre></td></tr></table></figure>
+<p>进入/usr/bin文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./mongod --dbpath /var/lib/mongodb/ --logpath /var/<span class="built_in">log</span>/mongodb/mongodb.log --logappend &amp;</div></pre></td></tr></table></figure></p>
+<p>后台自启动程序</p>
+<h3 id="确认启动并测试mongodb"><a href="#确认启动并测试mongodb" class="headerlink" title="确认启动并测试mongodb"></a>确认启动并测试mongodb</h3><p>一般安装完默认是启动状态，如果没有启动输入下面命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /etc/init.d/mongodb start</div></pre></td></tr></table></figure></p>
+<p>确认mongo已启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -antup</div><div class="line">$ cat /var/<span class="built_in">log</span>/mongodb/mongodb.log</div></pre></td></tr></table></figure></p>
+<p>显示mongodb的日志即为成功</p>
+<p>测试mongo客户端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mongo</div></pre></td></tr></table></figure></p>
+<p>打开mongo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ db.foo.save(&#123;a:1&#125;)</div></pre></td></tr></table></figure>
+<p>写入数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ db.foo.findOne()</div></pre></td></tr></table></figure>
+<p>显示数据，写入数据成功</p>
+<p>ok啦~</p>
+<h2 id="二、Redis"><a href="#二、Redis" class="headerlink" title="二、Redis"></a>二、Redis</h2><p>问：Redis是干嘛的？<br>答：Redis是常用基于内存的Key-Value数据库，比Memcache更先进，支持多种数据结构，高效，快速。用Redis可以很轻松解决高并发的数据访问问题；做为时时监控信号处理也非常不错。</p>
+<h3 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install redis-server</div></pre></td></tr></table></figure>
+<p>安装完redis会自动启动，输入下面命令测试Redis程序<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ps -aux|grep redis</div></pre></td></tr></table></figure></p>
+<p>可以看到 /usr/bin/redis-server 127.0.0.1:6379 字样</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ netstat -nlt|grep 6379</div></pre></td></tr></table></figure>
+<p>检查redis服务，显示tcp 0 0 127.0.0.1:6379 0.0.0.0:* LISTEN</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /etc/init.d/redis-server status</div></pre></td></tr></table></figure>
+<p>显示redis-server状态active(running)</p>
+<h3 id="通过命令行访问Redis"><a href="#通过命令行访问Redis" class="headerlink" title="通过命令行访问Redis"></a>通过命令行访问Redis</h3><p>在本机输入redis-cli命令就可以启动resid客户端。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ rediscli</div><div class="line">redis 127.0.0.1:6379&gt;</div><div class="line"></div><div class="line"><span class="comment"># 命令行的帮助</span></div><div class="line">redis 127.0.0.1:6379&gt; <span class="built_in">help</span></div><div class="line">redis-cli 2.2.12</div><div class="line">Type: <span class="string">"help @"</span> to get a list of commands <span class="keyword">in</span></div><div class="line">      <span class="string">"help "</span> <span class="keyword">for</span> <span class="built_in">help</span> on</div><div class="line">      <span class="string">"help "</span> to get a list of possible <span class="built_in">help</span> topics</div><div class="line">      <span class="string">"quit"</span> to <span class="built_in">exit</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 查看所有的key列表</span></div><div class="line">redis 127.0.0.1:6379&gt; keys *</div><div class="line">(empty list or <span class="built_in">set</span>)</div></pre></td></tr></table></figure></p>
+<p>Redis使用方法还有太多，以后慢慢了解。。。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/31/Ubuntu安装mongodb和redis/" rel="next" title="hello HEXO!">
+                <i class="fa fa-chevron-left"></i> hello HEXO!
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu Mengjie" />
+          <p class="site-author-name" itemprop="name">Liu Mengjie</p>
+          <p class="site-description motion-element" itemprop="description">乱花渐欲迷人眼，浅草才能没马蹄</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、mongodb"><span class="nav-number">1.</span> <span class="nav-text">一、mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mongodb"><span class="nav-number">1.1.</span> <span class="nav-text">安装mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件和数据存放位置（改到-www-mongodb-目录下）"><span class="nav-number">1.2.</span> <span class="nav-text">修改配置文件和数据存放位置（改到/www/mongodb/目录下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mongodb自启动"><span class="nav-number">1.3.</span> <span class="nav-text">mongodb自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确认启动并测试mongodb"><span class="nav-number">1.4.</span> <span class="nav-text">确认启动并测试mongodb</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Redis"><span class="nav-number">2.</span> <span class="nav-text">二、Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Redis"><span class="nav-number">2.1.</span> <span class="nav-text">安装Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过命令行访问Redis"><span class="nav-number">2.2.</span> <span class="nav-text">通过命令行访问Redis</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Mengjie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
