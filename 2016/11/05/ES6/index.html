@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="乱花渐欲迷人眼，浅草才能没马蹄">
-<meta property="og:type" content="website">
-<meta property="og:title" content="mj's Hexo!">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="之前也陆陆续续看过很多ES6特性，现在统一在hexo上记录一下~
+一、Arrows箭头函数基础用法，用() =&amp;gt; {}代替function声明。1234567891011121314151617//function声明sum = function (a,b)&amp;#123;  return a + b;&amp;#125;//箭头函数sum = (a,b) =&amp;gt; a + b;//多行逻辑的箭头函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习记录（一）">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/ES6/index.html">
 <meta property="og:site_name" content="mj's Hexo!">
-<meta property="og:description" content="乱花渐欲迷人眼，浅草才能没马蹄">
+<meta property="og:description" content="之前也陆陆续续看过很多ES6特性，现在统一在hexo上记录一下~
+一、Arrows箭头函数基础用法，用() =&amp;gt; {}代替function声明。1234567891011121314151617//function声明sum = function (a,b)&amp;#123;  return a + b;&amp;#125;//箭头函数sum = (a,b) =&amp;gt; a + b;//多行逻辑的箭头函数">
+<meta property="og:updated_time" content="2016-11-05T06:55:21.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mj's Hexo!">
-<meta name="twitter:description" content="乱花渐欲迷人眼，浅草才能没马蹄">
+<meta name="twitter:title" content="ES6学习记录（一）">
+<meta name="twitter:description" content="之前也陆陆续续看过很多ES6特性，现在统一在hexo上记录一下~
+一、Arrows箭头函数基础用法，用() =&amp;gt; {}代替function声明。1234567891011121314151617//function声明sum = function (a,b)&amp;#123;  return a + b;&amp;#125;//箭头函数sum = (a,b) =&amp;gt; a + b;//多行逻辑的箭头函数">
 
 
 
@@ -113,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/ES6/"/>
 
 
-  <title> mj's Hexo! </title>
+  <title> ES6学习记录（一） | mj's Hexo! </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -137,9 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -202,9 +204,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -224,10 +226,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/11/05/ES6/" itemprop="url">
-                  ES6学习记录（一）
-                </a>
+                ES6学习记录（一）
               
             
           </h1>
@@ -267,9 +266,7 @@
       
 
       
-        
-          
-            <p>之前也陆陆续续看过很多ES6特性，现在统一在hexo上记录一下~</p>
+        <p>之前也陆陆续续看过很多ES6特性，现在统一在hexo上记录一下~</p>
 <h2 id="一、Arrows箭头函数"><a href="#一、Arrows箭头函数" class="headerlink" title="一、Arrows箭头函数"></a>一、Arrows箭头函数</h2><h3 id="基础用法，用-gt-代替function声明。"><a href="#基础用法，用-gt-代替function声明。" class="headerlink" title="基础用法，用() =&gt; {}代替function声明。"></a>基础用法，用() =&gt; {}代替function声明。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//function声明</span></div><div class="line">sum = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> a + b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//箭头函数</span></div><div class="line">sum = <span class="function">(<span class="params">a,b</span>) =&gt;</span> a + b;</div><div class="line"></div><div class="line"><span class="comment">//多行逻辑的箭头函数</span></div><div class="line">sum = <span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">//逻辑代码</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//不带参数的箭头函数</span></div><div class="line">sum =&gt; &#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="箭头函数中this指向锁死"><a href="#箭头函数中this指向锁死" class="headerlink" title="箭头函数中this指向锁死"></a>箭头函数中this指向锁死</h3><p>在react中经常遇到下面写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">onclick = <span class="keyword">this</span>.clickHandler().bind(<span class="keyword">this</span>);</div><div class="line"></div><div class="line"><span class="comment">//bind函数改写，this自动锁定到对象</span></div><div class="line">onclick = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.clickHandler();</div><div class="line"></div><div class="line"><span class="comment">//再看一个例子</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'lmj'</span>；</div><div class="line"></div><div class="line">  <span class="keyword">this</span>.fun = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xd = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line">xd.fun().bind(&#123;<span class="attr">name</span>:<span class="string">'xd'</span>&#125;);<span class="comment">//输出lmj</span></div></pre></td></tr></table></figure></p>
 <p>调用<code>xd.fun()</code>方法时动态指向到对象<code>{name:&#39;xd&#39;}</code>上，结果仍然输出lmj。因为箭头函数中<code>this</code>指向函数创建时对象上，不会因为上下文环境变化而变化。</p>
@@ -284,16 +281,20 @@
 <h2 id="Map和Set"><a href="#Map和Set" class="headerlink" title="Map和Set"></a>Map和Set</h2><h3 id="Map是一个字典数据解构的对象"><a href="#Map是一个字典数据解构的对象" class="headerlink" title="Map是一个字典数据解构的对象"></a>Map是一个字典数据解构的对象</h3><p>Map自带有getter和setter方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"></div><div class="line">map.set(<span class="string">'toString'</span>,<span class="number">94</span>);<span class="comment">//如果用一般object，使用obj.toString会返回原生toString方法，显然不是我们想要的</span></div><div class="line">map.get(<span class="string">'toString'</span>);<span class="comment">//返回94</span></div></pre></td></tr></table></figure></p>
 <h3 id="Set是一个类似数组解构的对象"><a href="#Set是一个类似数组解构的对象" class="headerlink" title="Set是一个类似数组解构的对象"></a>Set是一个类似数组解构的对象</h3><p>Set带有add，has方法，并且自带去重功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"></div><div class="line">set.add(<span class="string">'lmj'</span>).add(<span class="string">'hyj'</span>).add(<span class="string">'lmj'</span>).add(<span class="string">'hyj'</span>)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(set.size);<span class="comment">//由于自动去重，set的size只有2</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="string">'3'</span>]);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(items.size);<span class="comment">//4</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.from(items);<span class="comment">//转换为数组：[1,2,3,'3']</span></div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -301,282 +302,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/11/03/在Ubuntu中安装mongodb和redis/" rel="next" title="在Ubuntu中安装mongodb和redis">
+                <i class="fa fa-chevron-left"></i> 在Ubuntu中安装mongodb和redis
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/11/03/在Ubuntu中安装mongodb和redis/" itemprop="url">
-                  在Ubuntu中安装mongodb和redis
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-03T20:38:41+08:00" content="2016-11-03">
-              2016-11-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<p>不会nodejs的前端不是好前端，最近在github上看到talkos的源码，决定在ubuntu上搭建一个mongodb+redis的环境。</p>
-<h2 id="一、mongodb"><a href="#一、mongodb" class="headerlink" title="一、mongodb"></a>一、mongodb</h2><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install mongodb</div></pre></td></tr></table></figure>
-<h3 id="修改配置文件和数据存放位置（改到-www-mongodb-目录下）"><a href="#修改配置文件和数据存放位置（改到-www-mongodb-目录下）" class="headerlink" title="修改配置文件和数据存放位置（改到/www/mongodb/目录下）"></a>修改配置文件和数据存放位置（改到/www/mongodb/目录下）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/mongodb.conf</div></pre></td></tr></table></figure>
-<p>vi打开mongodb.conf，找到dbpath修改为dbpath=/www/mongodb</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/init.d/mongodb</div></pre></td></tr></table></figure>
-<p>vi打开mongodb.conf，找到dbpath修改为dbpath=/www/mongodb</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install mongodb</div></pre></td></tr></table></figure>
-<p>vi打开mongodb.conf，修改为DATA=/www/mongodb</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mkdir /www/mongodb/</div></pre></td></tr></table></figure>
-<p>创建/www/mongodb文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chown -R mongodb:nogroup /www/mongodb/</div></pre></td></tr></table></figure>
-<h3 id="mongodb自启动"><a href="#mongodb自启动" class="headerlink" title="mongodb自启动"></a>mongodb自启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/bin</div></pre></td></tr></table></figure>
-<p>进入/usr/bin文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./mongod --dbpath /var/lib/mongodb/ --logpath /var/<span class="built_in">log</span>/mongodb/mongodb.log --logappend &amp;</div></pre></td></tr></table></figure></p>
-<p>后台自启动程序</p>
-<h3 id="确认启动并测试mongodb"><a href="#确认启动并测试mongodb" class="headerlink" title="确认启动并测试mongodb"></a>确认启动并测试mongodb</h3><p>一般安装完默认是启动状态，如果没有启动输入下面命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /etc/init.d/mongodb start</div></pre></td></tr></table></figure></p>
-<p>确认mongo已启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -antup</div><div class="line">$ cat /var/<span class="built_in">log</span>/mongodb/mongodb.log</div></pre></td></tr></table></figure></p>
-<p>显示mongodb的日志即为成功</p>
-<p>测试mongo客户端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mongo</div></pre></td></tr></table></figure></p>
-<p>打开mongo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ db.foo.save(&#123;a:1&#125;)</div></pre></td></tr></table></figure>
-<p>写入数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ db.foo.findOne()</div></pre></td></tr></table></figure>
-<p>显示数据，写入数据成功</p>
-<p>ok啦~</p>
-<h2 id="二、Redis"><a href="#二、Redis" class="headerlink" title="二、Redis"></a>二、Redis</h2><p>问：Redis是干嘛的？<br>答：Redis是常用基于内存的Key-Value数据库，比Memcache更先进，支持多种数据结构，高效，快速。用Redis可以很轻松解决高并发的数据访问问题；做为时时监控信号处理也非常不错。</p>
-<h3 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install redis-server</div></pre></td></tr></table></figure>
-<p>安装完redis会自动启动，输入下面命令测试Redis程序<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ps -aux|grep redis</div></pre></td></tr></table></figure></p>
-<p>可以看到 /usr/bin/redis-server 127.0.0.1:6379 字样</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ netstat -nlt|grep 6379</div></pre></td></tr></table></figure>
-<p>检查redis服务，显示tcp 0 0 127.0.0.1:6379 0.0.0.0:* LISTEN</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /etc/init.d/redis-server status</div></pre></td></tr></table></figure>
-<p>显示redis-server状态active(running)</p>
-<h3 id="通过命令行访问Redis"><a href="#通过命令行访问Redis" class="headerlink" title="通过命令行访问Redis"></a>通过命令行访问Redis</h3><p>在本机输入redis-cli命令就可以启动resid客户端。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ rediscli</div><div class="line">redis 127.0.0.1:6379&gt;</div><div class="line"></div><div class="line"><span class="comment"># 命令行的帮助</span></div><div class="line">redis 127.0.0.1:6379&gt; <span class="built_in">help</span></div><div class="line">redis-cli 2.2.12</div><div class="line">Type: <span class="string">"help @"</span> to get a list of commands <span class="keyword">in</span></div><div class="line">      <span class="string">"help "</span> <span class="keyword">for</span> <span class="built_in">help</span> on</div><div class="line">      <span class="string">"help "</span> to get a list of possible <span class="built_in">help</span> topics</div><div class="line">      <span class="string">"quit"</span> to <span class="built_in">exit</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 查看所有的key列表</span></div><div class="line">redis 127.0.0.1:6379&gt; keys *</div><div class="line">(empty list or <span class="built_in">set</span>)</div></pre></td></tr></table></figure></p>
-<p>Redis使用方法还有太多，以后慢慢了解。。。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/31/hello-HEXO/" itemprop="url">
-                  hello HEXO!
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-31T10:55:11+08:00" content="2016-10-31">
-              2016-10-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/bolg/" itemprop="url" rel="index">
-                    <span itemprop="name">bolg</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>刚在githuub上建立了我的<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> ，把<a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO说明文档</a>也留在这。下面是我的搭建流程。</p>
-<h2 id="一、hexo使用（首先要在node，git环境下）"><a href="#一、hexo使用（首先要在node，git环境下）" class="headerlink" title="一、hexo使用（首先要在node，git环境下）"></a>一、hexo使用（首先要在node，git环境下）</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i -g hexo</div></pre></td></tr></table></figure>
-<p>可以输入 hexo 命令验证是否安装成功</p>
-<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><h4 id="hexo-init"><a href="#hexo-init" class="headerlink" title="hexo init"></a>hexo init</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init MyHexo</div></pre></td></tr></table></figure>
-<p>初始化你的hexo文件目录结构，生成的MyHexo文件夹下有我们所需的所有文件和目录，其中public为发布目录，themes为主题目录，source\/_post 为发布文章的目录，可以发现里面有一个HelloWorld.md的文件。</p>
-<h4 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
-<p>生成静态文件到public目录下</p>
-<h4 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<p>本地发布hexo，输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可直接本地看hexo的效果</p>
-<h2 id="二、在github上发布hexo"><a href="#二、在github上发布hexo" class="headerlink" title="二、在github上发布hexo"></a>二、在github上发布hexo</h2><h3 id="github上建立new-repository"><a href="#github上建立new-repository" class="headerlink" title="github上建立new repository"></a>github上建立new repository</h3><p>命名为你的 github主页名字 + github.io，如我的：ooopp7788.github.io<br>因为只有这个命名下的repository，github会默认发布为你的主页，可以通过 你的github主页名字 + github.io直接访问</p>
-<h3 id="将pubilc文件夹remote到new-repository"><a href="#将pubilc文件夹remote到new-repository" class="headerlink" title="将pubilc文件夹remote到new repository"></a>将pubilc文件夹remote到new repository</h3><p>进入MyHexo/public文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> MyHexo/public</div></pre></td></tr></table></figure></p>
-<p>初始化git本地仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
-<p>git remote add origin + 刚才建立的new repository地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:ooopp7788/ooopp7788.github.io.git</div></pre></td></tr></table></figure></p>
-<p>然后就ok啦</p>
-<h2 id="三、更新hexo和发布流程"><a href="#三、更新hexo和发布流程" class="headerlink" title="三、更新hexo和发布流程"></a>三、更新hexo和发布流程</h2><h3 id="新建hexo文章"><a href="#新建hexo文章" class="headerlink" title="新建hexo文章"></a>新建hexo文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">'newPost'</span></div></pre></td></tr></table></figure>
-<p>会在MyHexo/source/_post文件夹下生成一个newPost.md的文件，这个就是我们要用markdown语法写的blog文章。</p>
-<h3 id="Hexo生成静态文件"><a href="#Hexo生成静态文件" class="headerlink" title="Hexo生成静态文件"></a>Hexo生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
-<p>hexo会将我们写好的文章自动生成静态文件到public文件夹中，以用于发布</p>
-<h3 id="push到你的github主页"><a href="#push到你的github主页" class="headerlink" title="push到你的github主页"></a>push到你的github主页</h3><p>进入MyHexo/public文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> MyHexo/public</div></pre></td></tr></table></figure></p>
-<p>使用git命令推送到你的github主页：<br>1、添加跟踪<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div></pre></td></tr></table></figure></p>
-<p>2、提交改动，’’ 中是我们为更新添加的说明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">'日常更新'</span></div></pre></td></tr></table></figure></p>
-<p>3、push到远程分支，默认为origin master<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push</div></pre></td></tr></table></figure></p>
-<p>第一篇文章~完工~!</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -584,6 +335,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -603,8 +358,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -654,6 +418,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Arrows箭头函数"><span class="nav-number">1.</span> <span class="nav-text">一、Arrows箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础用法，用-gt-代替function声明。"><span class="nav-number">1.1.</span> <span class="nav-text">基础用法，用() => {}代替function声明。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数中this指向锁死"><span class="nav-number">1.2.</span> <span class="nav-text">箭头函数中this指向锁死</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spread运算符"><span class="nav-number">2.</span> <span class="nav-text">Spread运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">2.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际用处"><span class="nav-number">2.2.</span> <span class="nav-text">实际用处</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#精简代码，提升逼格"><span class="nav-number">2.2.1.</span> <span class="nav-text">精简代码，提升逼格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中使用spread运算符"><span class="nav-number">2.2.2.</span> <span class="nav-text">react中使用spread运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructuring解构"><span class="nav-number">3.</span> <span class="nav-text">Destructuring解构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法-1"><span class="nav-number">3.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际应用"><span class="nav-number">3.2.</span> <span class="nav-text">实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map和Set"><span class="nav-number">4.</span> <span class="nav-text">Map和Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map是一个字典数据解构的对象"><span class="nav-number">4.1.</span> <span class="nav-text">Map是一个字典数据解构的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set是一个类似数组解构的对象"><span class="nav-number">4.2.</span> <span class="nav-text">Set是一个类似数组解构的对象</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -750,6 +525,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
