@@ -225,6 +225,116 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/28/js面向对象和继承/" itemprop="url">
+                  js面向对象和继承
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-28T19:27:29+08:00" content="2016-11-28">
+              2016-11-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近重新复习了JS面向对象和继承的一些知识，做了个小小的总结。</p>
+<h2 id="对象（Object）和-原型（prototype）"><a href="#对象（Object）和-原型（prototype）" class="headerlink" title="对象（Object）和 原型（prototype）"></a>对象（Object）和 原型（prototype）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123;</div><div class="line">  <span class="attr">name</span> : <span class="string">'lmj'</span>,</div><div class="line">  <span class="attr">age</span> : <span class="number">15</span>,</div><div class="line">  <span class="attr">family</span> : &#123;</div><div class="line">    <span class="attr">farther</span> : <span class="string">'l'</span>,</div><div class="line">    <span class="attr">morther</span>: <span class="string">'j'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>o1对象是通过直接量创建的，这样创建的对象都有一个共同的原型对象<code>Object.prototype</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure>
+<p>o2对象是通过关键字new和构造函数创建的，这样创建的对象也有原型对象，它的原型就是<code>构造函数</code>的<code>prototype</code>的值。<br>js中每个函数在创建时都有一个<code>prototype</code>原型属性，可以利用prototype来实现js中的继承。<br>默认所有原型对象都自动获得一个属性<code>constructor</code>，这个属性包含一个这向prototype的指针。</p>
+<h2 id="js中的继承"><a href="#js中的继承" class="headerlink" title="js中的继承"></a>js中的继承</h2><p>###　普通构造函数式继承</p>
+<p>####　创建构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'xxx'</span>;</div><div class="line">  <span class="keyword">this</span>.info = &#123;</div><div class="line">    <span class="attr">nation</span> : <span class="string">'China'</span>,</div><div class="line">    <span class="attr">arr</span> : [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'xxx'</span>);</div></pre></td></tr></table></figure>
+<p>这个是个简单的构造函数<code>Person</code>，创建的<code>p1</code>对象带有<code>name</code>属性值为xxx，并存放了一些基本信息在<code>info</code>中。</p>
+<h4 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h4><p>下面用再创建一个构造函数<code>Student</code>，继承<code>Person</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.base = <span class="string">'s'</span></div><div class="line">&#125;</div><div class="line">Student.prototype = <span class="keyword">new</span> Person(); <span class="comment">//Student的原型指向Person</span></div><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'小明'</span>,<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
+<p>不难发现，新的构造函数<code>Student</code>利用<code>Student.prototype</code>属性继承了<code>Person</code>。除了<code>Student</code>新加入的属性<code>age</code>外，<code>Student</code>还覆盖了<code>Person</code>中的<code>name</code>属性。<br>在firefox中查看<code>s1</code>对象时，很容易发现，<code>s1</code>中有<code>name</code>、<code>age</code>属性，这是<code>s1</code>的自有属性（own property），还有一个<strong>proto</strong>属性，这个是继承自Person的属性，其中又有<code>name</code>、<code>info</code>、<code>__proto__</code>等属性。<br>说明其实本质上继承的属性还是在原型链上，只是在属性查询时，在<code>s1</code>上查找到了<code>name</code>属性，就不会再往原型链中查找。表面上看起来就是覆盖掉了这个属性。</p>
+<h4 id="原型继承的本质"><a href="#原型继承的本质" class="headerlink" title="原型继承的本质"></a>原型继承的本质</h4><p>其中有这么几个重要的过程：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'小明'</span>,<span class="number">5</span>)      <span class="comment">//一：Student的实例s1 --&gt; Student.prototype</span></div><div class="line"></div><div class="line">Student.prototype = <span class="keyword">new</span> Person();  <span class="comment">//二：Student.prototype --&gt; new Person() Person实例</span></div><div class="line"></div><div class="line">                                    <span class="comment">//三： 除开Object等原生构造函数，终点就是Person.prototype</span></div></pre></td></tr></table></figure></p>
+<p>每个实例都会包含2个部分，一个是自身属性（own property）和继承属性<code>__proto__</code>。<br>自身属性就不说了（s1中的name、age、base都是s1的own property）。<code>__proto__</code>是继承自超类的属性和方法，其中继承属性要是复杂对象的话，就会涉及到JS中的<code>对象引用</code>。下面分析一下原型继承的缺陷。</p>
+<h4 id="原型继承的缺陷"><a href="#原型继承的缺陷" class="headerlink" title="原型继承的缺陷"></a>原型继承的缺陷</h4><p>还是上面的<code>Student</code>对象，再实例化另一个对象s2。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> Student (<span class="string">'lmj'</span>,<span class="number">22</span>);</div><div class="line"><span class="built_in">console</span>.log(s1,s2);  <span class="comment">//Student的2个不同实例，共享了一些继承自Person的基本属性info，注意info本身是个复杂对象</span></div><div class="line"></div><div class="line">s1.info.caption = <span class="string">'Chinese'</span>; <span class="comment">//在其中一个实例s1中修改属性info的caption，发现s1、s2都被改变</span></div><div class="line">s2.base = <span class="string">'s2'</span>;</div><div class="line">s1.base = <span class="string">'s1'</span>;  <span class="comment">//赋值属性时string类型，一般会在当前实例上创建这个属性，而不是引用原型</span></div></pre></td></tr></table></figure></p>
+<p>看起来此时是对实例<code>s1</code>的修改，实际上本质是Student的原型上的info属性被改变，而Student的所有实例都是<span style="color: red">引用</span>原型上的info属性。<br><span style="color: red">注：上述继承方式仅针对<code>原型继承</code>属性是一个对象时有效，如果继承的属性是字符串数字等值时，并不是js的对象引用。</span></p>
+<h3 id="方法借用继承"><a href="#方法借用继承" class="headerlink" title="方法借用继承"></a>方法借用继承</h3><h4 id="apply方法借用"><a href="#apply方法借用" class="headerlink" title="apply方法借用"></a>apply方法借用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperClass</span> (<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'superConstructor!'</span>)</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.citys = [<span class="string">'beijing'</span>,<span class="string">'shanghai'</span>,<span class="string">'wuhan'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubClass</span> (<span class="params">name,age</span>)</span>&#123;</div><div class="line">  SuperClass.call(<span class="keyword">this</span>,name); <span class="comment">//使用call借用SuperClass中方法，并传递参数name</span></div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubClass(<span class="string">'lmj'</span>,<span class="number">15</span>);</div><div class="line"><span class="built_in">console</span>.log(instance); <span class="comment">//实例中继承了SuperClass属性和方法，也有自身属性</span></div></pre></td></tr></table></figure>
+<p>这样方法借用，超类的构造函数会在子类中调用一遍，所有超类中的属性都在子类中，并没有继承超类的原型。所以也不会存在对象引用的问题。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/05/ES6/" itemprop="url">
                   ES6学习记录（一）
                 </a>
@@ -615,7 +725,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
